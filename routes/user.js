@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.post('/register', async (req,res) => {
     const {username, password} = req.body;
-    const user = await UserModel.findOne({username: username});
+    const user = await UserModel.findOne({username: username}); //Creating a new User instance 
     if(user) {
         return res.json({message: "Oops! User aldready registered. Try out a different username..."})
     }
